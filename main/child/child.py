@@ -8,7 +8,7 @@ class Smart_samurai:
     def __init__(self, name: str, period: int, python_level: int):
         self.name = name
         self.period = period
-        self.python_level = python_level
+        self.python_level = python_level  # propertyで管理
         #クラスメソッドの際追加
         Smart_samurai.total_samurais += 1
 
@@ -17,7 +17,7 @@ class Smart_samurai:
         Smart_samurai.total_samurais -= 1
         print(f"{self.name} が削除されました。現在の総人数: {Smart_samurai.total_samurais}")
 
-    # 自己紹介メソッド
+    # 自己紹介メソッド (インスタンスメソッド）
     def introduce(self):
         return f"{self.community_name}の{self.name}です。SAGA_SMART_SAMURAI{self.period}期生です。Pythonレベルは{self.python_level}です。"
     # レベルアップメソッド
@@ -35,7 +35,7 @@ class Smart_samurai:
     def fun_of_community_by_classmethod(cls):
         return f"{cls.community_name}最高です！"
     @staticmethod
-    def fun_of_community_staticmethod():
+    def fun_of_community_by_staticmethod():
         return f"{Smart_samurai.community_name}最高やで！"
     # __add__(self, other)を使うことで「＋」演算時を使った際の挙動を指定。
     def __add__(self, other):
@@ -55,6 +55,19 @@ class Smart_samurai:
             return f"{self.name}の方がpythonレベルが高いです。"
         else:
             return f"{other.name}の方がpythonレベルが高いです。"
+    # property: python_level の取得
+    @property
+    def python_level(self):
+        return self._python_level
+
+    # setter: python_level の設定（1未満にはならないようにする）
+    @python_level.setter
+    def python_level(self, value):
+        if value < 3:
+            print("Pythonレベルは3以上にしてください！")
+            self._python_level = 3
+        else:
+            self._python_level = value
 # Smart_samuraiクラスを継承して、hagakureクラスを定義
 class Hagakure(Smart_samurai):
     # コンストラクタ

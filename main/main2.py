@@ -14,13 +14,13 @@ if __name__ == '__main__':
     samurai1 = Smart_samurai('samurai', 3, 100)
     print(samurai1.introduce())
     print(samurai1+hagakure1)
-
-    print(samurai1 - hagakure1)
-    print(samurai1 * hagakure1)
-    print(samurai1 / hagakure1)
-    print(samurai1==hagakure1)
-
-    print(Smart_samurai.fun_of_community_staticmethod())
-    print(Smart_samurai.fun_of_community_by_classmethod())
-    print(hagakure.fun_of_community_staticmethod())
-    print(hagakure.fun_of_community_by_classmethod())
+    #
+    # print(samurai1 - hagakure1)
+    # print(samurai1 * hagakure1)
+    # print(samurai1 / hagakure1)
+    # print(samurai1 == hagakure1)
+    #
+    # print(Smart_samurai.fun_of_community_by_staticmethod())
+    # print(Smart_samurai.fun_of_community_by_classmethod())
+    # print(hagakure.fun_of_community_by_staticmethod())
+    # print(hagakure.fun_of_community_by_classmethod())
